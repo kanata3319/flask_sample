@@ -1,8 +1,8 @@
 from flask import Flask, render_template
- 
+
 app = Flask(__name__, template_folder='../templates')
- 
- 
+
+
 # /helloにディスパッチ
 @app.route("/hello")
 def hello_world():
@@ -21,5 +21,5 @@ def hello_template_name(name):
     return render_template('hello.html', name=name)
 
 
-if  __name__ == "__main__":
-    app.run(debug=True, port=8888, threaded=True)  
+if __name__ == "__main__":
+    app.run(debug=True, port=8888, threaded=True)
