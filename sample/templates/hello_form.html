@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        {% if last_name %}
+        <h1>Hello, {{last_name}} {{first_name}}!</h1>
+        {% else %}
+        <h1>名字と名前を入力!</h1>
+        {% endif %}
+        <form method="POST">
+            <label for="last_name">名字: </label><input type="text" name="last_name">
+            <label for="first_name">名前: </label><input type="text" name="first_name">
+            <input type="submit" value="送信">
+        </form>
+    </body>
+</html>
