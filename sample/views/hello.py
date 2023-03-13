@@ -1,7 +1,9 @@
-from flask import Flask, render_template, request
+from flask import render_template, request, Blueprint
 
-app = Flask(__name__, template_folder='../templates')
 
+# Blueprintのオブジェクトを生成する
+# Blueprint: アプリケーションの機能を分割できる
+app = Blueprint('func', __name__)
 
 # /helloにディスパッチ
 @app.route("/hello")
@@ -29,7 +31,3 @@ def hello_form():
         first_name = request.form.get('first_name')  # first_nameを取得
         return render_template('hello_form.html', last_name=last_name, first_name=first_name)  # last_name, first_nameをhome.htmlに送る
     return render_template('hello_form.html')
-
-
-if __name__ == "__main__":
-    app.run(debug=True, port=8888, threaded=True)
